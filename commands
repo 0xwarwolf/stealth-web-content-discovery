@@ -1,0 +1,4 @@
+ gobuster.exe dir -u https:// -w ~/Desktop/SecLists-master/Discovery/Web-Content/raft-large-directories.txt  -t 1 --delay 500ms -a "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+
+dirhunt https:// --delay 0.5 --threads 2  --proxies http://proxy1:3128,http://proxy2:3128,tor*4 \ --timeout 12 --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" --header "Accept-Language: en-US" --to-file ./results.json
+
