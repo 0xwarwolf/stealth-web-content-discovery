@@ -1,8 +1,9 @@
- gobuster.exe dir -u https:// -w ~/Desktop/SecLists-master/Discovery/Web-Content/raft-large-directories.txt  -t 1 --delay 500ms -a "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+gobuster.exe dir -u https:// -w ~/Desktop/SecLists-master/Discovery/Web-Content/raft-large-directories.txt  -t 1 --delay 500ms -a "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" $ gobuster.exe dir -u https://alphaomega.mx/ -w ~/Desktop/SecLists-master/Discovery/Web-Content/combined_directories.txt -a "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"   -s 200,302 -b ''
 
-dirhunt https:// --delay 0.5 --threads 2  --proxies http://proxy1:3128,http://proxy2:3128,tor*4 \ --timeout 12 --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" --header "Accept-Language: en-US" --to-file ./results.json
+
+dirhunt https:// --delay 0.5 --threads 2  --proxies http://proxy1:3128,http://proxy2:3128,tor*4  --timeout 12 --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" --header "Accept-Language: en-US" --to-file ./results.json
+
 
 ffuf.exe -u  'https://zzz/FUZZ' -w ~/Desktop/SecLists-master/Discovery/Web-Content/raft-large-files.txt  -mc 200,204,301,302,307,403,401 -rate 5 -p "1.0-3.0" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" -recursion -recursion-depth 1
 
 
- gobuster.exe dir -u https://.mx/ -w ~/Desktop/SecLists-master/Discovery/Web-Content/combined_directories.txt -a "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
